@@ -1,22 +1,81 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransformationDetailViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransformationDetailViewController" customModule="Practica_FundIOS_AGGA" customModuleProvider="target">
             <connections>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="transformDescription" destination="bcH-L3-YRG" id="V1z-B8-Yuk"/>
+                <outlet property="transformImage" destination="u4D-Qr-7a3" id="zdb-8R-TP6"/>
+                <outlet property="transformTitle" destination="Wu4-h8-A3r" id="HUE-2A-tmz"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-        </view>
+        <viewController id="G1g-lq-cmT">
+            <view key="view" contentMode="scaleToFill" id="HXK-1b-NTb">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Login BG" id="Teb-LJ-bh3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="YUQ-nT-lej">
+                        <rect key="frame" x="16" y="75" width="361" height="727"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="u4D-Qr-7a3">
+                                <rect key="frame" x="0.0" y="0.0" width="361" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="swS-on-JnI"/>
+                                    <constraint firstAttribute="height" constant="300" id="xpb-XN-7IO"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wu4-h8-A3r" userLabel="heroName">
+                                <rect key="frame" x="0.0" y="339" width="361" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="fTy-d6-zeu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <color key="textColor" red="0.98625212910000004" green="0.92130094770000004" blue="0.3222264051" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="Description" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcH-L3-YRG" userLabel="heroDescripcion">
+                                <rect key="frame" x="0.0" y="410" width="361" height="317"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Wu4-h8-A3r" firstAttribute="leading" secondItem="YUQ-nT-lej" secondAttribute="leading" id="0SB-2e-wrb"/>
+                            <constraint firstItem="Wu4-h8-A3r" firstAttribute="top" secondItem="u4D-Qr-7a3" secondAttribute="bottom" constant="39" id="aiU-lB-YtO"/>
+                            <constraint firstItem="bcH-L3-YRG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Wu4-h8-A3r" secondAttribute="bottom" constant="16" id="cQ7-j7-eug"/>
+                            <constraint firstAttribute="trailing" secondItem="Wu4-h8-A3r" secondAttribute="trailing" id="fRy-h6-iCo"/>
+                            <constraint firstAttribute="trailing" secondItem="bcH-L3-YRG" secondAttribute="trailing" id="umz-8x-wgO"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <viewLayoutGuide key="safeArea" id="i1P-KH-YIf"/>
+                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                <constraints>
+                    <constraint firstItem="i1P-KH-YIf" firstAttribute="bottom" secondItem="YUQ-nT-lej" secondAttribute="bottom" constant="16" id="An6-Vm-qTg"/>
+                    <constraint firstItem="YUQ-nT-lej" firstAttribute="top" secondItem="i1P-KH-YIf" secondAttribute="top" constant="16" id="Awd-yf-ZhP"/>
+                    <constraint firstItem="YUQ-nT-lej" firstAttribute="centerX" secondItem="Teb-LJ-bh3" secondAttribute="centerX" id="BhE-I8-CDQ"/>
+                    <constraint firstItem="YUQ-nT-lej" firstAttribute="leading" secondItem="HXK-1b-NTb" secondAttribute="leadingMargin" id="s37-2o-xUG"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="26" y="129"/>
+        </viewController>
     </objects>
+    <resources>
+        <image name="Login BG" width="390" height="844"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

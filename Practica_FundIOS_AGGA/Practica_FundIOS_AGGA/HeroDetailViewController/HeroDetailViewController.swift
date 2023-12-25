@@ -9,21 +9,31 @@ import UIKit
 
 class HeroDetailViewController: UIViewController {
 
+    let heroeDetail = HeroesData.goku
+    
+    @IBOutlet var heroImage: UIImageView!
+    @IBOutlet var heroName: UILabel!
+    @IBOutlet var heroDescription: UILabel!
+    @IBOutlet var botonTransformaciones: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        /*
+        
+        if !heroeDetail.[transformaciones].isEmpty {
+            botonTransformaciones.isHidden = true
+        }else{
+            botonTransformaciones.isHidden = false
+        }
+         
+         */
+            
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func butonTransform(_ sender: UIButton) {
+        
+        performSegue(withIdentifier: "goToTransformsList", sender: self)
     }
-    */
 
 }

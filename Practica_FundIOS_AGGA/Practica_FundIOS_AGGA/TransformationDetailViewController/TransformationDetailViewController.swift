@@ -9,6 +9,14 @@ import UIKit
 
 class TransformationDetailViewController: UIViewController {
 
+    // Let transformation object que recibo
+    
+    
+    @IBOutlet var transformImage: UIImageView!
+    @IBOutlet var transformTitle: UILabel!
+    @IBOutlet var transformDescription: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

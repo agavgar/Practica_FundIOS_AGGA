@@ -9,21 +9,26 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet var emailUserName: UITextField!
+    @IBOutlet var passwordUser: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    
+    @IBAction func checkLogin(_ sender: UIButton) {
+        
+        let loginAPI = APIController()
+        if loginAPI.tryLogin(username: emailUserName.text ?? "", password: passwordUser.text ?? ""){
+            performSegue(withIdentifier: "goToHeroes", sender: self)
+        }else{
+            performSegue(withIdentifier: "goToHeroes", sender: self)
+        }
+        
+        
+        
     }
-    */
-
 }
