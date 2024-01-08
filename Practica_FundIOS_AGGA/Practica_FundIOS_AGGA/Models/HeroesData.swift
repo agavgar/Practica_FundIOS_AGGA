@@ -7,11 +7,22 @@
 
 import Foundation
 
+struct LoginData:Codable{
+    let username: String
+    let password:String
+}
+
+struct HeroTransformData:Codable{
+    let title: String
+    let description: String
+    let image:String
+}
+
 struct HeroesData:Codable{
     let name: String
     let description: String
     let image: String
-    // let evolutions: [HeroesTransform]
+    // let evolutions: [HeroTransformData]
 }
 
 #if DEBUG
@@ -32,17 +43,6 @@ extension HeroesData {
 
 #endif
 
-
-struct LoginData:Codable{
-    let username: String
-    let password:String
-}
-
-struct HeroTransformData:Codable{
-    let title: String
-    let description: String
-    let image:String
-}
 
 #if DEBUG
 

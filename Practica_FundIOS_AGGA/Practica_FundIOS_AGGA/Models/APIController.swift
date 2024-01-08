@@ -10,6 +10,7 @@ import Foundation
 struct APIController{
     
     let dragonBallURL = "https://dragonball.keepcoding.education/"
+    let token = "eyJraWQiOiJwcml2YXRlIiwiYWxnIjoiSFMyNTYiLCJ0eXAiOiJKV1QifQ.eyJpZGVudGlmeSI6IjFBNDI0NDZFLUI5M0MtNEI3RS04MzQxLTBEQTVCOERCQjdDMiIsImVtYWlsIjoiYWxleC5nYXZpcmFAZ21haWwuY29tIiwiZXhwaXJhdGlvbiI6NjQwOTIyMTEyMDB9.ZHqui-H7UdhB7hF6Q8ecb8iellXjsI-UW359w3lZ158"
     
     enum DataPath: String, Equatable{
         case hero = "/api/heros/all"
@@ -21,6 +22,10 @@ struct APIController{
         var decodedData: T? = nil
         let urlString = dragonBallURL + typeCase.rawValue
         print(urlString)
+        
+        var request = URLRequest(url: URL(string: urlString)!)
+            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        print(request)
 
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)

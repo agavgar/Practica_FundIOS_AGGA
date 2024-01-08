@@ -9,15 +9,29 @@ import UIKit
 
 class TransformTableViewCell: UITableViewCell {
 
+    //MARK: - Identifier
+    
+    static let identifier = "CustomTableViewCell"
+
+    //MARK: - Outlets
+    
+    
+    @IBOutlet var transformName: UILabel!
+    //@IBOutlet var transformImage: UIImageView!
+    @IBOutlet var transformInfo: UILabel!
+    
+    //MARK: - Configure
+    func configure(with transform:HeroTransformData){
+        transformName.text = transform.title
+        transformInfo.text = transform.description
+        //transformImage.image = UIImage(named: transform.image)
+        //heroImage.image = UIImage(named: heroe.image)
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
 }
