@@ -19,15 +19,31 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        
+        
     }
     
     //MARK: - Actions
     @IBAction func checkLogin(_ sender: UIButton) {
         model.login(user: emailUserName.text ?? "", password: passwordUser.text ?? "") { result in
             switch result {
-            case let .success(token):print("✅ \(token)")
+            case let .success(token):
+                print("✅ \(token)")
+                self.comprobarTokenExiste(tokenNuevo:token)
+                DispatchQueue.main.async {
+                    let heroeCollectionViewController = HeroeCollectionViewController()
+                    self.navigationController?.pushViewController(heroeCollectionViewController, animated: true)
+                }
+                
             case let.failure(error): print("🔴 \(error)")
             }
+        }
+    }
+    
+    func comprobarTokenExiste(tokenNuevo:String){
+        guard UserDefaults.standard.string(forKey: "Token") != nil else {
+            return UserDefaults.standard.set(tokenNuevo, forKey: "Token")
         }
     }
 }

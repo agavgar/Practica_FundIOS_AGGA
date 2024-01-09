@@ -52,4 +52,26 @@ final class NetworkModel {
         
         client.jwt(urlRequest, completion: completion)
     }
+    
+    func requestHeroes(completion: @escaping (Result<[HeroesData], DragonBallError>)-> Void){
+        var components = baseComponents
+        components.path = "/api/heroes/all"
+        
+        guard let url = components.url else {
+            completion(.failure(.malformedURL))
+            return
+        }
+        
+        guard let token = UserDefaults.standard.string(forKey: "Token") else {
+            return print("Token no encontrado")
+        }
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        
+        client.requestHeroe(urlRequest, completion: completion)
+    }
+    
+    
 }

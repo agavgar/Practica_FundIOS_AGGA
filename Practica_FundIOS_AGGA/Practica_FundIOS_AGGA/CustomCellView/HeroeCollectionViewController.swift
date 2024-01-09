@@ -13,7 +13,6 @@ final class HeroeCollectionViewController: UICollectionViewController {
     private let collectionHeroes:  [HeroesData] = [.cell,.goku,.vegetta]
     
     //MARK: - Initializers
-    /*
     
     init(){
         let layout = UICollectionViewFlowLayout()
@@ -27,7 +26,6 @@ final class HeroeCollectionViewController: UICollectionViewController {
         fatalError("init (coder:) has not been implemented")
     }
     
-     */
      
     //MARK: - View Lifecycle
     
