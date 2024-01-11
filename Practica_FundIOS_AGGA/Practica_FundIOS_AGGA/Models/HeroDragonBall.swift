@@ -18,7 +18,7 @@ struct HeroTransformData:Codable{
     let image:String
 }
 
-struct HeroesData:Codable{
+struct HeroDragonBall:Codable{
     let name: String
     let description: String
     let image: String
@@ -27,17 +27,17 @@ struct HeroesData:Codable{
 
 #if DEBUG
 
-extension HeroesData {
-    static var goku: HeroesData {
-        HeroesData(name: "Goku", description: "Erase una vez un skladjadlkasjdakl", image: "Imagen")
+extension HeroDragonBall {
+    static var goku: HeroDragonBall {
+        HeroDragonBall(name: "Goku", description: "Erase una vez un skladjadlkasjdakl", image: "Imagen")
     }
     
-    static var vegetta: HeroesData {
-        HeroesData(name: "Vegeta", description: "Principe Saiyan", image: "PrincipeVegeta")
+    static var vegetta: HeroDragonBall {
+        HeroDragonBall(name: "Vegeta", description: "Principe Saiyan", image: "PrincipeVegeta")
     }
     
-    static var cell: HeroesData {
-        HeroesData(name: "Celula", description: "jdhakljsdhajksda", image: "jklashdjkas")
+    static var cell: HeroDragonBall {
+        HeroDragonBall(name: "Celula", description: "jdhakljsdhajksda", image: "jklashdjkas")
     }
 }
 
