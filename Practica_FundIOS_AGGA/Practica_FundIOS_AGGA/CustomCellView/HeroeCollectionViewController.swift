@@ -10,7 +10,8 @@ import UIKit
 final class HeroeCollectionViewController: UICollectionViewController {
     
     //MARK: - Models
-    private let collectionHeroes:  [HeroesData] = [.cell,.goku,.vegetta]
+    private let model = NetworkModel.shared
+    private var collectionHeroes: [HeroDragonBall] = []
     
     //MARK: - Initializers
     
@@ -31,6 +32,21 @@ final class HeroeCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        model.getHeroes { [weak self] result in
+            switch result{
+            case let .success(listadoHeroes):
+                self?.collectionHeroes = listadoHeroes
+                DispatchQueue.main.async {
+                    self?.collectionView.reloadData()
+                }
+                print(listadoHeroes)
+                break
+            case let .failure(error):
+                print(error)
+            }
+            
+        }
         
         collectionView.register(UINib(nibName: CustomCollectionViewCell.identifier, bundle: nil),forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
     }
@@ -64,7 +80,27 @@ extension HeroeCollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "goToHeroDetail", sender: self)
-        // ENVIAR EL HEROE OBJETO
+        
+        let heroeSelected = collectionHeroes[indexPath.row]
+        
+        model.getTransformation(id:heroeSelected.id) { [weak self] result in
+            switch result{
+            case let .success(listadoTransform):
+                DispatchQueue.main.async {
+                    let heroDetailSender = HeroDetailViewController(nibName: "HeroDetailViewController", bundle: nil)
+                    heroDetailSender.heroDetail = heroeSelected
+                    heroDetailSender.heroTransformation = listadoTransform
+                    self?.navigationController?.pushViewController(heroDetailSender, animated: true)
+                }
+                break
+            case let .failure(error):
+                print(error)
+            }
+        }
+        
+        
+        
+        
+        
     }
 }

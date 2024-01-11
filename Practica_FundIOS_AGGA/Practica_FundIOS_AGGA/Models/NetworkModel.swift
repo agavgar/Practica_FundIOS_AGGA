@@ -12,6 +12,20 @@ final class NetworkModel {
     // Siempre estara viva en todo momento de la aplicacion
     static let shared = NetworkModel()
     
+    private var token: String? {
+        get {
+            if let token = LocalDataModel.getToken(){
+                return token
+            }
+            return nil
+        }
+        set{
+            if let token = newValue {
+                LocalDataModel.save(token: token)
+            }
+        }
+    }
+    
     private var baseComponents:URLComponents {
         var components = URLComponents()
         components.scheme = "https"
@@ -23,7 +37,7 @@ final class NetworkModel {
     
     // Inicializador privado para prevenir que tengan acceso
     // pueda ser instanciado desde fuera
-    private init(client: APIClientProtocol = APIClient()) {
+    init(client: APIClientProtocol = APIClient()) {
         self.client = client
     }
     
@@ -50,27 +64,72 @@ final class NetworkModel {
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
         
-        client.jwt(urlRequest, completion: completion)
+        client.jwt(urlRequest) { [weak self] result in
+            switch result {
+                case let .success(token):
+                    self?.token = token
+                    LocalDataModel.save(token: token)
+                    completion(.success(token))
+                case let .failure(error):
+                    completion(.failure(error))
+            }
+        }
+        
     }
     
-    func requestHeroes(completion: @escaping (Result<[HeroesData], DragonBallError>)-> Void){
+    
+    func getHeroes(completion: @escaping (Result<[HeroDragonBall], DragonBallError>)-> Void){
         var components = baseComponents
-        components.path = "/api/heroes/all"
+        components.path = "/api/heros/all"
         
         guard let url = components.url else {
             completion(.failure(.malformedURL))
             return
         }
         
-        guard let token = UserDefaults.standard.string(forKey: "Token") else {
-            return print("Token no encontrado")
+        guard let token else {
+            completion(.failure(.tokenNoEncontrado))
+            return
         }
+                    
+                    
+        // Crear un objeto URLComponents, para encodificarlo posteriormente
+        var urlComponents = URLComponents()
+        urlComponents.queryItems = [URLQueryItem(name:"name", value:"")]
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        urlRequest.httpBody = urlComponents.query?.data(using: .utf8)
         
-        client.requestHeroe(urlRequest, completion: completion)
+        client.request(urlRequest, using: [HeroDragonBall].self, completion: completion)
+    }
+    
+    func getTransformation(id:String,completion: @escaping (Result<[HeroTransform], DragonBallError>)-> Void){
+        var components = baseComponents
+        components.path = "/api/heros/tranformations"
+        
+        guard let url = components.url else {
+            completion(.failure(.malformedURL))
+            return
+        }
+        
+        guard let token else {
+            completion(.failure(.tokenNoEncontrado))
+            return
+        }
+                    
+                    
+        // Crear un objeto URLComponents, para encodificarlo posteriormente
+        var urlComponents = URLComponents()
+        urlComponents.queryItems = [URLQueryItem(name:"id", value:id)]
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        urlRequest.httpBody = urlComponents.query?.data(using: .utf8)
+        
+        client.request(urlRequest, using: [HeroTransform].self, completion: completion)
     }
     
     

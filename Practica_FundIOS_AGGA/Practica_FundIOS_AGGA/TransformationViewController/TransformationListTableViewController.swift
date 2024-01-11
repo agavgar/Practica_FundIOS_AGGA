@@ -10,7 +10,7 @@ import UIKit
 final class TransformationListTableViewController: UITableViewController {
         
     //MARK: - Models
-    let transformList: [HeroTransformData] = [.goku,.cell,.vegetta]
+    var transformList: [HeroTransform] = []
     
     
     //MARK: - Initializers
@@ -61,26 +61,25 @@ extension TransformationListTableViewController {
 extension TransformationListTableViewController {
     
     
-    override func tableView(
-        _ tableView: UITableView,
-        cellForRowAt indexPath: IndexPath
-    ) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TransformTableViewCell.identifier, for: indexPath) as? TransformTableViewCell else {
             return UITableViewCell()
         }
         
-        //let cell = UITableViewCell()
-        let transformation = transformList[indexPath.row]
-        // Forma nueva de configurar una celda por defecto
-        cell.configure(with: transformation)
+        let transform = transformList[indexPath.row]
+        cell.configure(with: transform)
         return cell
+        
     }
     
-    override func tableView(
-        _ tableView: UITableView,
-        didSelectRowAt indexPath: IndexPath
-    ) {
-        performSegue(withIdentifier: "goToTransformsDetail", sender: self)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let transformDetail = transformList[indexPath.row]
+        
+        let transformDetailSender = TransformationDetailViewController(nibName: "TransformationDetailViewController", bundle: nil)
+        transformDetailSender.transformDetail = transformDetail
+        navigationController?.pushViewController(transformDetailSender, animated: true)
+        
     }
 }

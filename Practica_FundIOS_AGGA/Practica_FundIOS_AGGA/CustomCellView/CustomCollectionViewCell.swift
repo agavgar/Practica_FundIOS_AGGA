@@ -17,13 +17,13 @@ final class CustomCollectionViewCell: UICollectionViewCell {
     
     
     @IBOutlet var heroName: UILabel!
-    @IBOutlet var heroImage: UIImageView!
+    //@IBOutlet var heroImage: UIImageView!
     
     
     //MARK: - Configure
-    func configure(with heroe:HeroesData){
+    func configure(with heroe:HeroDragonBall){
         heroName.text = heroe.name
-        heroImage.image = UIImage(named: heroe.image)
+        //heroImage.image = UIImage(named: heroe.photo)
     }
     
     override func awakeFromNib() {

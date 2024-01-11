@@ -9,29 +9,24 @@ import UIKit
 
 class TransformationDetailViewController: UIViewController {
 
-    // Let transformation object que recibo
-    
+    var transformDetail = HeroTransform(id: "", name: "", description: "", photo: "")
     
     @IBOutlet var transformImage: UIImageView!
-    @IBOutlet var transformTitle: UILabel!
+    @IBOutlet var transformName: UILabel!
     @IBOutlet var transformDescription: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        updateUI()
+        
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func updateUI(){
+        transformName.text = transformDetail.name
+        transformDescription.text = transformDetail.description
+        //transform.image = transformDetail.photo
     }
-    */
-
+    
 }

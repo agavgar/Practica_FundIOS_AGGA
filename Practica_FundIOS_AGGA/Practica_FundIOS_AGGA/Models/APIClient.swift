@@ -38,11 +38,9 @@ extension DragonBallError{
 
 protocol APIClientProtocol {
     var session: URLSession { get }
-    func requestHeroe(_ request: URLRequest, completion: @escaping (Result<[HeroesData], DragonBallError>) -> Void)
     
+    func request<T: Decodable>(_ request: URLRequest,using type: T.Type, completion: @escaping (Result<T, DragonBallError>) -> Void)
     func jwt(_ request: URLRequest , completion: @escaping (Result<String, DragonBallError>) -> Void)
-    
-    func requestTransform(_ request: URLRequest, completion: @escaping (Result<[HeroTransformData], DragonBallError>) -> Void)
 }
 
 struct APIClient: APIClientProtocol {
@@ -52,17 +50,15 @@ struct APIClient: APIClientProtocol {
         self.session = session
     }
     
-    func requestHeroe(_ request: URLRequest, completion: @escaping (Result<[HeroesData], DragonBallError>) -> Void) {
+    func request<T: Decodable>(_ request: URLRequest,using type: T.Type, completion: @escaping (Result<T, DragonBallError>) -> Void) {
         
         session.dataTask(with: request) { data, response, error in
-            let result: Result<[HeroesData], DragonBallError>
+            let result: Result<T, DragonBallError>
             
-            /*
             defer {
                 completion(result)
             }
             
-             */
             guard error == nil else {
                 if let error = error as? NSError,
                    let error = DragonBallError.error(for: error.code){
@@ -85,11 +81,12 @@ struct APIClient: APIClientProtocol {
                 return
             }
             
-            guard let listaHeroes = try? JSONDecoder().decode([HeroesData].self, from: data) else {
+            guard let resource = try? JSONDecoder().decode(T.self, from: data) else {
+                result = .failure(.decodingFailed)
                 return
             }
             
-            result = .success(listaHeroes)
+            result = .success(resource)
         }
         .resume()
     }
@@ -133,47 +130,7 @@ struct APIClient: APIClientProtocol {
             }
             .resume()
         }
-    
-    func requestTransform(_ request: URLRequest, completion: @escaping (Result<[HeroTransformData], DragonBallError>) -> Void) {
-        
-        session.dataTask(with: request) { data, response, error in
-            let result: Result<[HeroTransformData], DragonBallError>
-            
-            /*
-            defer {
-                completion(result)
-            }
-            */
-            guard error == nil else {
-                if let error = error as? NSError,
-                   let error = DragonBallError.error(for: error.code){
-                    result = .failure(error)
-                }else{
-                    result = .failure(.unknown)
-                }
-                return
-            }
-            
-            guard let data else {
-                result = .failure(.noData)
-                return
-            }
-            
-            let statusCode = (response as? HTTPURLResponse)?.statusCode
-            
-            guard statusCode == 200 else {
-                result = .failure(.statusCode(code: statusCode))
-                return
-            }
-            
-            guard let listaTransform = try? JSONDecoder().decode([HeroTransformData].self, from: data) else {
-                return
-            }
-            
-            result = .success(listaTransform)
-        }
-        .resume()
-    }
+
 }
     
     

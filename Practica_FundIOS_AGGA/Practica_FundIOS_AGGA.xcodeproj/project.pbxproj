@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6E0491782B39FE700090367F /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0491772B39FE700090367F /* APIController.swift */; };
+		6E37D9DB2B4DD35800A11B8B /* LocalDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E37D9DA2B4DD35800A11B8B /* LocalDataModel.swift */; };
+		6E37D9DD2B4DEE2600A11B8B /* NetworkModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E37D9DC2B4DEE2600A11B8B /* NetworkModelTests.swift */; };
+		6E37D9E02B4DF02400A11B8B /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E37D9DF2B4DF02400A11B8B /* MockURLProtocol.swift */; };
 		6E7D33C12B30CB0E00445A76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7D33C02B30CB0E00445A76 /* AppDelegate.swift */; };
 		6E7D33C32B30CB0E00445A76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7D33C22B30CB0E00445A76 /* SceneDelegate.swift */; };
 		6E7D33CA2B30CB1000445A76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E7D33C92B30CB1000445A76 /* Assets.xcassets */; };
@@ -15,7 +17,7 @@
 		6E7D33E22B30CB1000445A76 /* Practica_FundIOS_AGGAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7D33E12B30CB1000445A76 /* Practica_FundIOS_AGGAUITests.swift */; };
 		6E7D33E42B30CB1000445A76 /* Practica_FundIOS_AGGAUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7D33E32B30CB1000445A76 /* Practica_FundIOS_AGGAUITestsLaunchTests.swift */; };
 		6EB178AC2B4C5E7D000967CD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EB178AB2B4C5E7D000967CD /* LaunchScreen.xib */; };
-		6EB26E5C2B38371D008E40B6 /* HeroesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB26E5B2B38371D008E40B6 /* HeroesData.swift */; };
+		6EB26E5C2B38371D008E40B6 /* HeroDragonBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB26E5B2B38371D008E40B6 /* HeroDragonBall.swift */; };
 		6EB26E612B397739008E40B6 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB26E5F2B397739008E40B6 /* CustomCollectionViewCell.swift */; };
 		6EB26E622B397739008E40B6 /* CustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EB26E602B397739008E40B6 /* CustomCollectionViewCell.xib */; };
 		6EB26E652B398A10008E40B6 /* HeroeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB26E632B398A10008E40B6 /* HeroeCollectionViewController.swift */; };
@@ -52,7 +54,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6E0491772B39FE700090367F /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		6E37D9DA2B4DD35800A11B8B /* LocalDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataModel.swift; sourceTree = "<group>"; };
+		6E37D9DC2B4DEE2600A11B8B /* NetworkModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModelTests.swift; sourceTree = "<group>"; };
+		6E37D9DF2B4DF02400A11B8B /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		6E7D33BD2B30CB0E00445A76 /* Practica_FundIOS_AGGA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Practica_FundIOS_AGGA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E7D33C02B30CB0E00445A76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E7D33C22B30CB0E00445A76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,7 +68,7 @@
 		6E7D33E12B30CB1000445A76 /* Practica_FundIOS_AGGAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practica_FundIOS_AGGAUITests.swift; sourceTree = "<group>"; };
 		6E7D33E32B30CB1000445A76 /* Practica_FundIOS_AGGAUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practica_FundIOS_AGGAUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		6EB178AB2B4C5E7D000967CD /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
-		6EB26E5B2B38371D008E40B6 /* HeroesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesData.swift; sourceTree = "<group>"; };
+		6EB26E5B2B38371D008E40B6 /* HeroDragonBall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDragonBall.swift; sourceTree = "<group>"; };
 		6EB26E5F2B397739008E40B6 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		6EB26E602B397739008E40B6 /* CustomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCollectionViewCell.xib; sourceTree = "<group>"; };
 		6EB26E632B398A10008E40B6 /* HeroeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroeCollectionViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +112,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E37D9DE2B4DEFF500A11B8B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				6E37D9DF2B4DF02400A11B8B /* MockURLProtocol.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		6E7D33B42B30CB0E00445A76 = {
 			isa = PBXGroup;
 			children = (
@@ -149,7 +161,9 @@
 		6E7D33D62B30CB1000445A76 /* Practica_FundIOS_AGGATests */ = {
 			isa = PBXGroup;
 			children = (
+				6E37D9DE2B4DEFF500A11B8B /* Helpers */,
 				6E7D33D72B30CB1000445A76 /* Practica_FundIOS_AGGATests.swift */,
+				6E37D9DC2B4DEE2600A11B8B /* NetworkModelTests.swift */,
 			);
 			path = Practica_FundIOS_AGGATests;
 			sourceTree = "<group>";
@@ -197,10 +211,10 @@
 		6EB26E5A2B383709008E40B6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				6EB26E5B2B38371D008E40B6 /* HeroesData.swift */,
-				6E0491772B39FE700090367F /* APIController.swift */,
+				6EB26E5B2B38371D008E40B6 /* HeroDragonBall.swift */,
 				6EF3C6402B4C9A2A00C2F9AD /* APIClient.swift */,
 				6EF3C6422B4C9E4200C2F9AD /* NetworkModel.swift */,
+				6E37D9DA2B4DD35800A11B8B /* LocalDataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -366,11 +380,11 @@
 				6EF3C6432B4C9E4200C2F9AD /* NetworkModel.swift in Sources */,
 				6E7D33C12B30CB0E00445A76 /* AppDelegate.swift in Sources */,
 				6E7D33C32B30CB0E00445A76 /* SceneDelegate.swift in Sources */,
-				6E0491782B39FE700090367F /* APIController.swift in Sources */,
 				6EC559972B3A2DDA0096ED39 /* TransformationListTableViewController.swift in Sources */,
 				6EC5599C2B3A341D0096ED39 /* TransformationDetailViewController.swift in Sources */,
+				6E37D9DB2B4DD35800A11B8B /* LocalDataModel.swift in Sources */,
 				6EB26E652B398A10008E40B6 /* HeroeCollectionViewController.swift in Sources */,
-				6EB26E5C2B38371D008E40B6 /* HeroesData.swift in Sources */,
+				6EB26E5C2B38371D008E40B6 /* HeroDragonBall.swift in Sources */,
 				6EC559A02B3A3B2D0096ED39 /* TransformTableViewCell.swift in Sources */,
 				6EF3C6412B4C9A2A00C2F9AD /* APIClient.swift in Sources */,
 			);
@@ -380,6 +394,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E37D9E02B4DF02400A11B8B /* MockURLProtocol.swift in Sources */,
+				6E37D9DD2B4DEE2600A11B8B /* NetworkModelTests.swift in Sources */,
 				6E7D33D82B30CB1000445A76 /* Practica_FundIOS_AGGATests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,10 +8,12 @@
 import UIKit
 
 class HeroDetailViewController: UIViewController {
-
-    let heroeDetail = HeroesData.goku
     
-    @IBOutlet var heroImage: UIImageView!
+    var heroDetail: HeroDragonBall?
+    var heroTransformation: [HeroTransform]?
+    //private let model = NetworkModel.shared
+    
+    //@IBOutlet var heroImage: UIImageView!
     @IBOutlet var heroName: UILabel!
     @IBOutlet var heroDescription: UILabel!
     @IBOutlet var botonTransformaciones: UIButton!
@@ -19,21 +21,36 @@ class HeroDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /*
+        guard heroDetail != nil else { return }
+        guard heroTransformation != nil else { return }
         
-        if !heroeDetail.[transformaciones].isEmpty {
-            botonTransformaciones.isHidden = true
-        }else{
-            botonTransformaciones.isHidden = false
-        }
-         
-         */
-            
+        showButton(cantidad: heroTransformation?.count)
+        updateUI()
+        
     }
-
+    
     @IBAction func butonTransform(_ sender: UIButton) {
         
-        performSegue(withIdentifier: "goToTransformsList", sender: self)
+        let transformDetail = TransformationListTableViewController(nibName: "TransformationListTableViewController", bundle: nil)
+        transformDetail.transformList = heroTransformation!
+        navigationController?.pushViewController(transformDetail, animated: true)
+        
     }
-
+    
+    func updateUI(){
+        heroName.text = heroDetail?.name
+        heroDescription.text = heroDetail?.description
+        //heroImage.image = heroDetail?.photo
+    }
+    
+    func showButton(cantidad: Int?){
+        if cantidad != nil {
+            if cantidad == 0 {
+                botonTransformaciones.isHidden = true
+            }else{
+                botonTransformaciones.isHidden = false
+            }
+        }
+    }
+    
 }

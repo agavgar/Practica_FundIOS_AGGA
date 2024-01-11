@@ -7,26 +7,22 @@
 
 import Foundation
 
-struct LoginData:Codable{
-    let username: String
-    let password:String
-}
-
-struct HeroTransformData:Codable{
-    let title: String
+struct HeroTransform:Codable{
+    let id: String
+    let name: String
     let description: String
-    let image:String
+    let photo:String
 }
 
 struct HeroDragonBall:Codable{
+    let id: String
     let name: String
     let description: String
-    let image: String
-    // let evolutions: [HeroTransformData]
+    let photo: String
 }
 
 #if DEBUG
-
+/*
 extension HeroDragonBall {
     static var goku: HeroDragonBall {
         HeroDragonBall(name: "Goku", description: "Erase una vez un skladjadlkasjdakl", image: "Imagen")
@@ -46,18 +42,19 @@ extension HeroDragonBall {
 
 #if DEBUG
 
-extension HeroTransformData {
-    static var goku: HeroTransformData {
-        HeroTransformData(title: "Goku", description: "Erase una vez un skladjadlkasjdakl", image: "Imagen")
+extension TransformHero {
+    static var goku: TransformHero {
+        TransformHero(title: "Goku", description: "Erase una vez un skladjadlkasjdakl", image: "Imagen")
     }
     
-    static var vegetta: HeroTransformData {
-        HeroTransformData(title: "Vegeta", description: "Principe Saiyan", image: "PrincipeVegeta")
+    static var vegetta: TransformHero {
+        TransformHero(title: "Vegeta", description: "Principe Saiyan", image: "PrincipeVegeta")
     }
     
-    static var cell: HeroTransformData {
-        HeroTransformData(title: "Celula", description: "jdhakljsdhajksda", image: "jklashdjkas")
+    static var cell: TransformHero {
+        TransformHero(title: "Celula", description: "jdhakljsdhajksda", image: "jklashdjkas")
     }
 }
-
+ */
 #endif
+ 

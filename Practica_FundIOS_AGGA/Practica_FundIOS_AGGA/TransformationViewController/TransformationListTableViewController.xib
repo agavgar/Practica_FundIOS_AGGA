@@ -7,20 +7,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransformationListTableViewController" customModule="Practica_FundIOS_AGGA" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransformationListTableViewController" customModule="Practica_FundIOS_AGGA" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="LsX-dy-oHl" id="bY5-qP-cLn"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewController nibName="TransformationListTableViewController" id="Qbu-Mr-vHI" customClass="TransformationListTableViewController" customModule="Practica_FundIOS_AGGA" customModuleProvider="target">
-            <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" estimatedRowHeight="150" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ZNK-X1-hB5">
-                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                <connections>
-                    <outlet property="dataSource" destination="Qbu-Mr-vHI" id="ewA-mi-Dk1"/>
-                    <outlet property="delegate" destination="Qbu-Mr-vHI" id="J8z-rU-blP"/>
-                </connections>
-            </tableView>
-            <point key="canvasLocation" x="-979.38931297709917" y="-61.267605633802823"/>
-        </tableViewController>
+        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="LsX-dy-oHl">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="sectionIndexBackgroundColor" red="0.9423469901" green="0.60626941919999999" blue="0.25768792629999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <connections>
+                <outlet property="dataSource" destination="-1" id="wqe-Wg-Moq"/>
+                <outlet property="delegate" destination="-1" id="Y6A-RD-Gbr"/>
+            </connections>
+            <point key="canvasLocation" x="-1514" y="-35"/>
+        </tableView>
     </objects>
     <resources>
         <systemColor name="systemBackgroundColor">

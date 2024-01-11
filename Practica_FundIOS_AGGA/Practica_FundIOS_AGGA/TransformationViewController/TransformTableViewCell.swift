@@ -11,7 +11,7 @@ class TransformTableViewCell: UITableViewCell {
 
     //MARK: - Identifier
     
-    static let identifier = "CustomTableViewCell"
+    static let identifier = "TransformTableViewCell"
 
     //MARK: - Outlets
     
@@ -21,10 +21,10 @@ class TransformTableViewCell: UITableViewCell {
     @IBOutlet var transformInfo: UILabel!
     
     //MARK: - Configure
-    func configure(with transform:HeroTransformData){
-        transformName.text = transform.title
+    func configure(with transform:HeroTransform){
+        transformName.text = transform.name
         transformInfo.text = transform.description
-        //transformImage.image = UIImage(named: transform.image)
+        //transformImage.image = AsyncImage(url: URL(string: transform.photo))
         //heroImage.image = UIImage(named: heroe.image)
     }
     
