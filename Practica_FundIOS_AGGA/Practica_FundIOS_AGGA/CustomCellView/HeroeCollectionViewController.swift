@@ -8,18 +8,24 @@
 import UIKit
 
 final class HeroeCollectionViewController: UICollectionViewController {
+    //MARK: - Typealias
+    typealias DataSource = UICollectionViewDiffableDataSource<Int, HeroDragonBall>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<Int, HeroDragonBall>
     
     //MARK: - Models
     private let model = NetworkModel.shared
-    private var collectionHeroes: [HeroDragonBall] = []
+    private var dataSource: DataSource?
+    //private var collectionHeroes: [HeroDragonBall] = []
     
     //MARK: - Initializers
-    
     init(){
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 150, height: 150)
+        layout.itemSize = CGSize(width: 175, height: 175)
         layout.scrollDirection = .vertical
         super.init(collectionViewLayout: layout)
+        
+        collectionView.contentInset.left = 16
+        collectionView.contentInset.right = 16
     }
     
     @available(*,unavailable)
@@ -29,31 +35,83 @@ final class HeroeCollectionViewController: UICollectionViewController {
     
      
     //MARK: - View Lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let registration = UICollectionView.CellRegistration<CustomCollectionViewCell, HeroDragonBall>( cellNib: UINib(
+            nibName: CustomCollectionViewCell.identifier,
+            bundle: nil)) { cell, _, hero in
+                
+                cell.configure(with: hero)
+                
+            }
+        
+        dataSource = DataSource(collectionView: collectionView) { collectionView, indexPath, hero in
+            collectionView.dequeueConfiguredReusableCell(using: registration, for: indexPath, item: hero)
+        }
+        
+        collectionView.dataSource = dataSource
+        
         model.getHeroes { [weak self] result in
             switch result{
-            case let .success(listadoHeroes):
+            case let .success(hero):
+                
+                var snapshot = Snapshot()
+                snapshot.appendSections([0])
+                snapshot.appendItems(hero)
+                self?.dataSource?.apply(snapshot)
+/*
                 self?.collectionHeroes = listadoHeroes
                 DispatchQueue.main.async {
                     self?.collectionView.reloadData()
                 }
                 print(listadoHeroes)
+ */
                 break
+
             case let .failure(error):
                 print(error)
             }
             
         }
-        
+        /*
         collectionView.register(UINib(nibName: CustomCollectionViewCell.identifier, bundle: nil),forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
+         */
     }
 }
 
-//MARK: - CollectionView DataSource
+extension HeroeCollectionViewController {
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        guard let heroSelected = dataSource?.itemIdentifier(for: indexPath) else { return }
+        
+        model.getTransformation(id:heroSelected.id) { [weak self] result in
+            switch result{
+            case let .success(listadoTransform):
+                
+                DispatchQueue.main.async {
+                    let heroDetailViewController = HeroDetailViewController(hero:heroSelected,transform:listadoTransform)
+                    self?.navigationController?.show(heroDetailViewController, sender: nil)
+                    
+                    //let heroDetailSender = HeroDetailViewController(nibName: "HeroDetailViewController", bundle: nil)
+                    //heroDetailSender.heroDetail = heroSelected
+                    //heroDetailSender.heroTransformation = listadoTransform
+                    //self?.navigationController?.pushViewController(heroDetailSender, animated: true)
+                }
+                
+                break
+            case let .failure(error):
+                print(error)
+            }
+        }
+        
+    }
+    
+}
 
+/*
+//MARK: - CollectionView DataSource
 extension HeroeCollectionViewController {
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -104,3 +162,4 @@ extension HeroeCollectionViewController {
         
     }
 }
+*/

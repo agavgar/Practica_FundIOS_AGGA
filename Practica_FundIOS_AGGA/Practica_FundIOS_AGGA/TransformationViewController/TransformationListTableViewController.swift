@@ -8,78 +8,111 @@
 import UIKit
 
 final class TransformationListTableViewController: UITableViewController {
+    //MARK: - Typealias
+    typealias DataSource = UITableViewDiffableDataSource<Int,HeroTransform>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<Int, HeroTransform>
+    
         
     //MARK: - Models
-    var transformList: [HeroTransform] = []
+    private var transformList: [HeroTransform]
+    private var dataSource:DataSource?
     
-    
-    //MARK: - Initializers
-    /*
-    
-    init(){
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 150, height: 150)
-        layout.scrollDirection = .vertical
-        super.init(collectionViewLayout: layout)
+     //MARK: - Initializer
+    init(transformList: [HeroTransform]) {
+        self.transformList = transformList
+        super.init(nibName: nil, bundle: nil)
     }
     
-    @available(*,unavailable)
-    required init? (coder: NSCoder){
-        fatalError("init (coder:) has not been implemented")
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder: ) has not been iumplemented")
     }
     
-     */
-     
+    
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: TransformTableViewCell.identifier, bundle: nil),forCellReuseIdentifier: TransformTableViewCell.identifier)
         
+        dataSource = DataSource(tableView:tableView) { tableview, indexPath, transform in
+            
+            guard let cell = tableview.dequeueReusableCell(withIdentifier: TransformTableViewCell.identifier, for: indexPath) as? TransformTableViewCell else {
+                return UITableViewCell()
+            }
+            
+            cell.configure(with: transform)
+            return cell
+        }
+        
+        tableView.dataSource = dataSource
+        
+        var snapshot = Snapshot()
+        snapshot.appendSections([0])
+        snapshot.appendItems(transformList)
+        dataSource?.apply(snapshot)
     }
 
    
 }
 
-// MARK: - TableView DataSource
 extension TransformationListTableViewController {
-    override func numberOfSections(
-        in tableView: UITableView
-    ) -> Int {
-        return 1
-    }
-    
-    override func tableView(
-        _ tableView: UITableView,
-        numberOfRowsInSection section: Int
-    ) -> Int {
-        return transformList.count
-    }
-}
-
-// MARK: - TableView Delegate
-extension TransformationListTableViewController {
-    
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: TransformTableViewCell.identifier, for: indexPath) as? TransformTableViewCell else {
-            return UITableViewCell()
-        }
-        
-        let transform = transformList[indexPath.row]
-        cell.configure(with: transform)
-        return cell
-        
-    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let transformDetail = transformList[indexPath.row]
+        guard let transformDetail = dataSource?.itemIdentifier(for: indexPath) else {
+            return
+        }
         
-        let transformDetailSender = TransformationDetailViewController(nibName: "TransformationDetailViewController", bundle: nil)
-        transformDetailSender.transformDetail = transformDetail
-        navigationController?.pushViewController(transformDetailSender, animated: true)
+        let transformDetailSender = TransformationDetailViewController(transformationDetail: transformDetail)
+        navigationController?.show(transformDetailSender, sender: nil)
+        //transformDetailSender.transformDetail = transformDetail
         
     }
+    
 }
+
+/*
+ // MARK: - TableView DataSource
+ extension TransformationListTableViewController {
+ override func numberOfSections(
+ in tableView: UITableView
+ ) -> Int {
+ return 1
+ }
+ 
+ override func tableView(
+ _ tableView: UITableView,
+ numberOfRowsInSection section: Int
+ ) -> Int {
+ return transformList.count
+ }
+ }
+ 
+ // MARK: - TableView Delegate
+ extension TransformationListTableViewController {
+ 
+ 
+ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+ 
+ guard let cell = tableView.dequeueReusableCell(withIdentifier: TransformTableViewCell.identifier, for: indexPath) as? TransformTableViewCell else {
+ return UITableViewCell()
+ }
+ 
+ let transform = transformList[indexPath.row]
+ cell.configure(with: transform)
+ return cell
+ 
+ }
+ 
+ override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+ 
+ let transformDetail = transformList[indexPath.row]
+ 
+ let transformDetailSender = TransformationDetailViewController(nibName: "TransformationDetailViewController", bundle: nil)
+ transformDetailSender.transformDetail = transformDetail
+ navigationController?.pushViewController(transformDetailSender, animated: true)
+ 
+ }
+ }
+ */

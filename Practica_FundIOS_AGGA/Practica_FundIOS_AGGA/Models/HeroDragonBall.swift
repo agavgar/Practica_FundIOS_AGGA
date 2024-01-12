@@ -21,8 +21,12 @@ struct HeroDragonBall:Codable{
     let photo: String
 }
 
-#if DEBUG
+extension HeroTransform: Hashable{}
+extension HeroDragonBall: Hashable{}
+
 /*
+#if DEBUG
+
 extension HeroDragonBall {
     static var goku: HeroDragonBall {
         HeroDragonBall(name: "Goku", description: "Erase una vez un skladjadlkasjdakl", image: "Imagen")
@@ -55,6 +59,6 @@ extension TransformHero {
         TransformHero(title: "Celula", description: "jdhakljsdhajksda", image: "jklashdjkas")
     }
 }
- */
+
 #endif
- 
+ */

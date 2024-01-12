@@ -17,15 +17,14 @@ class TransformTableViewCell: UITableViewCell {
     
     
     @IBOutlet var transformName: UILabel!
-    //@IBOutlet var transformImage: UIImageView!
+    @IBOutlet var transformImage: UIImageView!
     @IBOutlet var transformInfo: UILabel!
     
     //MARK: - Configure
     func configure(with transform:HeroTransform){
         transformName.text = transform.name
         transformInfo.text = transform.description
-        //transformImage.image = AsyncImage(url: URL(string: transform.photo))
-        //heroImage.image = UIImage(named: heroe.image)
+        transformImage.setImage(url: transform.photo)
     }
     
     override func awakeFromNib() {

@@ -27,13 +27,14 @@ class LoginViewController: UIViewController {
             guard let self else { return }
             switch result {
             case .success(_):
+                
                 DispatchQueue.main.async {
                     let heroeCollectionViewController = HeroeCollectionViewController()
-                    self.navigationController?.pushViewController(heroeCollectionViewController, animated: true)
+                    self.navigationController?.setViewControllers([heroeCollectionViewController], animated: true)
                 }
-            case let.failure(error): print("🔴 \(error)")
+                
+            case let.failure(error): print("\(error)")
             }
         }
     }
-    
 }

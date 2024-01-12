@@ -11,7 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TransformationDetailViewController" customModule="Practica_FundIOS_AGGA" customModuleProvider="target">
             <connections>
                 <outlet property="transformDescription" destination="BtR-5F-FEJ" id="lk8-eQ-SJG"/>
-                <outlet property="transformImage" destination="3Y8-pV-2Fr" id="vBS-w8-FK5"/>
+                <outlet property="transformImage" destination="3Y8-pV-2Fr" id="qry-Ag-QtG"/>
                 <outlet property="transformName" destination="bUa-zd-QMQ" id="YuT-3c-NV4"/>
                 <outlet property="view" destination="zlZ-fv-aaa" id="vMR-cM-nKQ"/>
             </connections>

@@ -87,7 +87,7 @@
                             <rect key="frame" x="0.0" y="602.33333333333337" width="361" height="38"/>
                             <color key="tintColor" red="0.98625212910000004" green="0.92130094770000004" blue="0.3222264051" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="filled" title="LOGIN" cornerStyle="capsule">
+                            <buttonConfiguration key="configuration" style="filled" title="LOGIN" cornerStyle="capsule" titleAlignment="center">
                                 <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                             </buttonConfiguration>
                             <connections>

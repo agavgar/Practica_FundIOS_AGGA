@@ -7,15 +7,28 @@
 
 import UIKit
 
-class TransformationDetailViewController: UIViewController {
+final class TransformationDetailViewController: UIViewController {
 
-    var transformDetail = HeroTransform(id: "", name: "", description: "", photo: "")
-    
+    //MARK: - Outlets
     @IBOutlet var transformImage: UIImageView!
     @IBOutlet var transformName: UILabel!
     @IBOutlet var transformDescription: UILabel!
     
+    //MARK: - Models
+    private var transformDetail:HeroTransform
     
+    //MARK: - Initializer
+    init(transformationDetail: HeroTransform) {
+        self.transformDetail = transformationDetail
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    @available (*,unavailable)
+    required init?(coder: NSCoder) {
+        fatalError(" Init(coder:) has not been implemented")
+    }
+    
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,7 +39,14 @@ class TransformationDetailViewController: UIViewController {
     func updateUI(){
         transformName.text = transformDetail.name
         transformDescription.text = transformDetail.description
-        //transform.image = transformDetail.photo
+        transformImage.setImage(url: transformDetail.photo)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "LogOut", style: .plain, target: self, action: #selector(logOut))
+    }
+    
+    @objc
+    func logOut(_sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
     }
     
 }
