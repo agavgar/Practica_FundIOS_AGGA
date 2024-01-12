@@ -11,6 +11,9 @@ import XCTest
 final class NetworkModelTests: XCTestCase {
     private var sut: NetworkModel!
     private var expectedToken = "token"
+    private var expectedHero: [HeroDragonBall] = [
+    HeroDragonBall(id: "12323-132-12312", name: "Mr Satan Godo", description: "alsdjkhajklsasdasdasdasdasdhasldla", photo: "dasdasdasdadas")
+    ]
     
     override func setUp() {
         super.setUp()
@@ -79,6 +82,60 @@ final class NetworkModelTests: XCTestCase {
         wait(for: [expectation], timeout: 1)
         XCTAssertNotNil(receivedToken)
         XCTAssertEqual(receivedToken, expectedToken)
+    }
+    
+    func test_Heroe() throws {
+        // Given
+        // Codificar el expected hero a dat
+        
+        let encodedHero = encodeHero(expectedHero)
+        let heroData = try XCTUnwrap(encodedHero,"No nil result")
+        // Usar el token para enviar la información
+        let tokenRequest = LocalDataModel.getToken()
+        // Nos aseguramos que URLProtocol esta bien configurado
+        MockURLProtocol.error = nil
+        MockURLProtocol.requestHandler = { request in
+            
+            // Nos aseguramos que el metodo HTTP es el correcto
+            XCTAssertEqual(request.httpMethod, "POST")
+            // Nos aseguramos que el header the autenticacion es el correcto
+            XCTAssertEqual(
+                request.value(forHTTPHeaderField: "Authorization"),
+                "Bearer \(tokenRequest)")
+            // Creamos la respuesta mockeada
+            // Esto actua como un servidor "real" en los tests
+            let response = try XCTUnwrap(
+                HTTPURLResponse(
+                    url: URL(string: "https://dragonball.keepcoding.education/")!,
+                    statusCode: 200,
+                    httpVersion: nil,
+                    headerFields: ["Content-Type": "application/json"]
+                )
+            )
+            return (response, heroData)
+        }
+        
+        // When
+        let expectation = expectation(description: "Login success")
+        var receivedHero: [HeroDragonBall] = []
+        sut.getHeroes() { result in
+            guard case let .success(hero) = result else {
+                XCTFail("Expected success but received \(result)")
+                return
+            }
+            receivedHero = hero
+            expectation.fulfill()
+        }
+        
+        // Then
+        wait(for: [expectation], timeout: 1)
+        XCTAssertNotNil(receivedHero)
+        XCTAssertEqual(receivedHero, expectedHero)
+    }
+    
+    func encodeHero(_ hero: [HeroDragonBall]) -> Data? {
+        let encoder = JSONEncoder()
+        return try? encoder.encode(hero)
     }
     
 }

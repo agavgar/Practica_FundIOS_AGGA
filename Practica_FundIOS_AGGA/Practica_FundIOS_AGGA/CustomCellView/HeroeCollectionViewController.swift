@@ -38,7 +38,7 @@ final class HeroeCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let registration = UICollectionView.CellRegistration<CustomCollectionViewCell, HeroDragonBall>( cellNib: UINib(
+        let registration = UICollectionView.CellRegistration<CustomCollectionViewCell, HeroDragonBall>(cellNib: UINib(
             nibName: CustomCollectionViewCell.identifier,
             bundle: nil)) { cell, _, hero in
                 
@@ -77,6 +77,7 @@ final class HeroeCollectionViewController: UICollectionViewController {
         /*
         collectionView.register(UINib(nibName: CustomCollectionViewCell.identifier, bundle: nil),forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
          */
+        
     }
 }
 

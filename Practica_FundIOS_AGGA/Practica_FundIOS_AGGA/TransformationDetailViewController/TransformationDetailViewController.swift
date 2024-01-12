@@ -41,7 +41,7 @@ final class TransformationDetailViewController: UIViewController {
         transformDescription.text = transformDetail.description
         transformImage.setImage(url: transformDetail.photo)
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "LogOut", style: .plain, target: self, action: #selector(logOut))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "goHeroes", style: .plain, target: self, action: #selector(logOut))
     }
     
     @objc

@@ -10,12 +10,9 @@ import UIKit
 class TransformTableViewCell: UITableViewCell {
 
     //MARK: - Identifier
-    
     static let identifier = "TransformTableViewCell"
 
     //MARK: - Outlets
-    
-    
     @IBOutlet var transformName: UILabel!
     @IBOutlet var transformImage: UIImageView!
     @IBOutlet var transformInfo: UILabel!
@@ -26,11 +23,4 @@ class TransformTableViewCell: UITableViewCell {
         transformInfo.text = transform.description
         transformImage.setImage(url: transform.photo)
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    
 }
