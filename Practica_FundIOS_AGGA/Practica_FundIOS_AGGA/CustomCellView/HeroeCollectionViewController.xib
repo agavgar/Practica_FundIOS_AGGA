@@ -16,6 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <color key="backgroundColor" red="0.9423469901" green="0.60626941919999999" blue="0.25768792629999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color key="tintColor" red="0.9423469901" green="0.60626941919999999" blue="0.25768792629999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="16" minimumInteritemSpacing="16" id="tlJ-MM-jqG">
                 <size key="itemSize" width="150" height="150"/>
                 <size key="headerReferenceSize" width="0.0" height="0.0"/>

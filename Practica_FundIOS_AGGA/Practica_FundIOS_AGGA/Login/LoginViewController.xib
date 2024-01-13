@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Practica_FundIOS_AGGA" customModuleProvider="target">
             <connections>
                 <outlet property="emailUserName" destination="cOi-Lk-qXU" id="FIB-uM-9IY"/>
+                <outlet property="loginButton" destination="Rrg-jd-lMX" id="rMf-7x-gug"/>
                 <outlet property="passwordUser" destination="UpN-qq-wlK" id="lhz-Ts-QG7"/>
                 <outlet property="view" destination="usd-kO-58L" id="C8R-zL-beg"/>
             </connections>
@@ -27,7 +28,7 @@
                 <stackView opaque="NO" contentMode="center" axis="vertical" distribution="equalSpacing" alignment="center" spacing="160" translatesAutoresizingMaskIntoConstraints="NO" id="UN8-U5-FCL">
                     <rect key="frame" x="16" y="75" width="361" height="640.33333333333337"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dragon-Ball-Logo-Transparent-PNG" translatesAutoresizingMaskIntoConstraints="NO" id="1qJ-Ei-QLA">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DragonBallLogo" translatesAutoresizingMaskIntoConstraints="NO" id="1qJ-Ei-QLA">
                             <rect key="frame" x="0.0" y="0.0" width="361" height="157"/>
                         </imageView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="DnX-PS-bbk" userLabel="Login">
@@ -85,12 +86,15 @@
                         </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rrg-jd-lMX">
                             <rect key="frame" x="0.0" y="602.33333333333337" width="361" height="38"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="tintColor" red="0.98625212910000004" green="0.92130094770000004" blue="0.3222264051" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="filled" title="LOGIN" cornerStyle="capsule" titleAlignment="center">
                                 <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
                             </buttonConfiguration>
                             <connections>
+                                <action selector="buttonTouchCancel:" destination="-1" eventType="touchCancel" id="1VG-Nw-9gj"/>
+                                <action selector="buttonTouchDown:" destination="-1" eventType="touchDown" id="D69-uf-DIn"/>
                                 <action selector="checkLogin:" destination="-1" eventType="touchUpInside" id="UQG-3d-4tK"/>
                             </connections>
                         </button>
@@ -115,7 +119,7 @@
         </view>
     </objects>
     <resources>
-        <image name="Dragon-Ball-Logo-Transparent-PNG" width="800" height="157"/>
+        <image name="DragonBallLogo" width="800" height="157"/>
         <image name="Login BG" width="390" height="844"/>
         <image name="Separator" width="211.33332824707031" height="1"/>
         <systemColor name="systemBackgroundColor">

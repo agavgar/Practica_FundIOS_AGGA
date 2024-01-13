@@ -24,8 +24,19 @@ final class HeroeCollectionViewController: UICollectionViewController {
         layout.scrollDirection = .vertical
         super.init(collectionViewLayout: layout)
         
+        collectionView.backgroundColor = ColorPalette.customOrange
         collectionView.contentInset.left = 16
         collectionView.contentInset.right = 16
+        
+        let logo = UIImage(named: "DragonBallLogo")
+        let imageView = UIImageView(image: logo)
+        imageView.contentMode = .scaleAspectFit
+        
+        navigationItem.titleView = imageView
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "LogOut", style: .plain, target: self, action: #selector(logOut))
+        
+        navigationItem.rightBarButtonItem?.tintColor = ColorPalette.customYellow
+        
     }
     
     @available(*,unavailable)
@@ -79,11 +90,19 @@ final class HeroeCollectionViewController: UICollectionViewController {
          */
         
     }
+    
+    @objc
+    func logOut(_sender: Any) {
+        let loginVC = LoginViewController()
+        navigationController?.setViewControllers([loginVC], animated: true)
+    }
 }
 
 extension HeroeCollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        collectionView.cellForItem(at: indexPath)?.backgroundColor = ColorPalette.customOrangePressed
         
         guard let heroSelected = dataSource?.itemIdentifier(for: indexPath) else { return }
         
@@ -94,6 +113,7 @@ extension HeroeCollectionViewController {
                 DispatchQueue.main.async {
                     let heroDetailViewController = HeroDetailViewController(hero:heroSelected,transform:listadoTransform)
                     self?.navigationController?.show(heroDetailViewController, sender: nil)
+                    collectionView.cellForItem(at: indexPath)?.backgroundColor = ColorPalette.customOrange
                     
                     //let heroDetailSender = HeroDetailViewController(nibName: "HeroDetailViewController", bundle: nil)
                     //heroDetailSender.heroDetail = heroSelected

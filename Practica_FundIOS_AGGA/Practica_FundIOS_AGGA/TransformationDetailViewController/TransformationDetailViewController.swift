@@ -41,11 +41,22 @@ final class TransformationDetailViewController: UIViewController {
         transformDescription.text = transformDetail.description
         transformImage.setImage(url: transformDetail.photo)
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "goHeroes", style: .plain, target: self, action: #selector(logOut))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "goHeroes", style: .plain, target: self, action: #selector(goHeroes))
+        
+        navigationItem.rightBarButtonItem?.tintColor = ColorPalette.customYellow
+        navigationItem.backBarButtonItem?.tintColor = ColorPalette.customYellow
+        
+        
+        let logo = UIImage(named: "DragonBallLogo")
+        let imageView = UIImageView(image: logo)
+        imageView.contentMode = .scaleAspectFit
+        imageView.frame.size = CGSize(width: 50, height: 15)
+        navigationItem.titleView = imageView
+        navigationItem.backBarButtonItem?.title = "Transform"
     }
     
     @objc
-    func logOut(_sender: Any) {
+    func goHeroes(_sender: Any) {
         navigationController?.popToRootViewController(animated: true)
     }
     

@@ -41,25 +41,27 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="32" id="Tu8-NM-oh7"/>
                             </constraints>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                             <color key="textColor" red="0.98625212910000004" green="0.92130094770000004" blue="0.3222264051" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="Description" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vB-v6-aU8" userLabel="heroDescripcion">
-                            <rect key="frame" x="0.0" y="410" width="361" height="224"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="Description" lineBreakMode="tailTruncation" numberOfLines="25" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vB-v6-aU8" userLabel="heroDescripcion">
+                            <rect key="frame" x="0.0" y="409.99999999999994" width="361" height="242.33333333333331"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" red="0.98625212910000004" green="0.92130094770000004" blue="0.3222264051" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U41-CC-f7z">
-                            <rect key="frame" x="0.0" y="673" width="361" height="54"/>
+                            <rect key="frame" x="0.0" y="691.33333333333337" width="361" height="35.666666666666629"/>
                             <color key="tintColor" red="0.98625212910000004" green="0.92130094770000004" blue="0.3222264051" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="filled" title="Transformations" cornerStyle="capsule" buttonSize="large">
-                                <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                            <buttonConfiguration key="configuration" style="filled" title="Transformations" cornerStyle="capsule" buttonSize="medium" titleAlignment="center">
+                                <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
                             </buttonConfiguration>
                             <connections>
                                 <action selector="butonTransform:" destination="-1" eventType="touchUpInside" id="XZe-MR-1Ei"/>
+                                <action selector="buttonTouchCancel:" destination="-1" eventType="touchCancel" id="YOH-Kk-Oyk"/>
+                                <action selector="buttonTouchDown:" destination="-1" eventType="touchDown" id="J2n-Yt-fBO"/>
                             </connections>
                         </button>
                     </subviews>
@@ -84,7 +86,7 @@
                 <constraint firstItem="dvm-7p-8b6" firstAttribute="leading" secondItem="vVc-ir-ec3" secondAttribute="leading" constant="16" id="Tvp-l1-did"/>
                 <constraint firstItem="vVc-ir-ec3" firstAttribute="trailing" secondItem="dvm-7p-8b6" secondAttribute="trailing" constant="16" id="rks-wc-sNe"/>
             </constraints>
-            <point key="canvasLocation" x="-917" y="-15"/>
+            <point key="canvasLocation" x="-918.32061068702285" y="-15.492957746478874"/>
         </view>
     </objects>
     <resources>

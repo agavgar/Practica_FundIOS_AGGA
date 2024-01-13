@@ -40,18 +40,41 @@ final class HeroDetailViewController: UIViewController {
     }
     
     //MARK: - Actions
+    
+    @IBAction func buttonTouchCancel(_ sender: Any) {
+        zoomOut()
+        botonTransformaciones.tintColor = ColorPalette.customYellow
+    }
+    
+    @IBAction func buttonTouchDown(_ sender: Any) {
+        zoomIn()
+    }
+    
     @IBAction func butonTransform(_ sender: UIButton) {
+        
+        botonTransformaciones.tintColor = ColorPalette.customYellowPressed
         
         let transformList = TransformationListTableViewController(transformList:heroTransformation)
         navigationController?.show(transformList, sender: nil)
-        
     }
     
-    //MARK: - ViewFunction
+    //MARK: - UIFunction
     func updateUI(){
         heroName.text = hero.name
         heroDescription.text = hero.description
         heroImage.setImage(url: hero.photo)
+        
+        let logo = UIImage(named: "DragonBallLogo")
+        let imageView = UIImageView(image: logo)
+        imageView.contentMode = .scaleAspectFit
+        imageView.frame.size = CGSize(width: 50, height: 15)
+        navigationItem.titleView = imageView
+        
+        navigationItem.backBarButtonItem?.title = "Heroes"
+        navigationItem.backBarButtonItem?.tintColor = ColorPalette.customYellow
+        
+        botonTransformaciones.tintColor = ColorPalette.customYellow
+        
     }
     
     func showButton(cantidad: Int?){
@@ -62,4 +85,30 @@ final class HeroDetailViewController: UIViewController {
         }
     }
     
+}
+
+//MARK: - Animations
+extension HeroDetailViewController {
+    func zoomIn() {
+        UIView.animate(
+            withDuration: 0.2,
+            delay: 0,
+            usingSpringWithDamping: 0.15,
+            initialSpringVelocity: 0.5
+        ) { [weak self] in
+            self?.botonTransformaciones.transform = .identity
+                .scaledBy(x: 0.9, y: 0.9)
+        }
+    }
+    
+    func zoomOut() {
+        UIView.animate(
+            withDuration: 0.2,
+            delay: 0,
+            usingSpringWithDamping: 0.4,
+            initialSpringVelocity: 2
+        ) { [weak self] in
+            self?.botonTransformaciones.transform = .identity
+        }
+    }
 }

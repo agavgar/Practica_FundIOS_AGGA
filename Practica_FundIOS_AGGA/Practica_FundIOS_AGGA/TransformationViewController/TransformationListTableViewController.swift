@@ -21,6 +21,8 @@ final class TransformationListTableViewController: UITableViewController {
     init(transformList: [HeroTransform]) {
         self.transformList = transformList
         super.init(nibName: nil, bundle: nil)
+        
+        tableView.rowHeight = 150
     }
     
     @available(*, unavailable)
@@ -32,6 +34,15 @@ final class TransformationListTableViewController: UITableViewController {
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let logo = UIImage(named: "DragonBallLogo")
+        let imageView = UIImageView(image: logo)
+        imageView.contentMode = .scaleAspectFit
+        imageView.frame.size = CGSize(width: 50, height: 15)
+        navigationItem.titleView = imageView
+        
+        navigationItem.backBarButtonItem?.title = "Detail"
+        navigationItem.backBarButtonItem?.tintColor = ColorPalette.customYellow
         
         tableView.register(UINib(nibName: TransformTableViewCell.identifier, bundle: nil),forCellReuseIdentifier: TransformTableViewCell.identifier)
         
@@ -60,12 +71,15 @@ extension TransformationListTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        tableView.cellForRow(at: indexPath)?.backgroundColor = ColorPalette.customOrangePressed
+        
         guard let transformDetail = dataSource?.itemIdentifier(for: indexPath) else {
             return
         }
         
         let transformDetailSender = TransformationDetailViewController(transformationDetail: transformDetail)
         navigationController?.show(transformDetailSender, sender: nil)
+        tableView.cellForRow(at: indexPath)?.backgroundColor = ColorPalette.customOrange
         //transformDetailSender.transformDetail = transformDetail
         
     }

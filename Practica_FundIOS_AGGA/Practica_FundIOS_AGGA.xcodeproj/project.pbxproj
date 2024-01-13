@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E209F6C2B52CD5100DC357D /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E209F6B2B52CD5100DC357D /* ColorPalette.swift */; };
 		6E37D9DB2B4DD35800A11B8B /* LocalDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E37D9DA2B4DD35800A11B8B /* LocalDataModel.swift */; };
 		6E37D9DD2B4DEE2600A11B8B /* NetworkModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E37D9DC2B4DEE2600A11B8B /* NetworkModelTests.swift */; };
 		6E37D9E02B4DF02400A11B8B /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E37D9DF2B4DF02400A11B8B /* MockURLProtocol.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6E209F6B2B52CD5100DC357D /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		6E37D9DA2B4DD35800A11B8B /* LocalDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataModel.swift; sourceTree = "<group>"; };
 		6E37D9DC2B4DEE2600A11B8B /* NetworkModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkModelTests.swift; sourceTree = "<group>"; };
 		6E37D9DF2B4DF02400A11B8B /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				6EF3C6402B4C9A2A00C2F9AD /* APIClient.swift */,
 				6EF3C6422B4C9E4200C2F9AD /* NetworkModel.swift */,
 				6E37D9DA2B4DD35800A11B8B /* LocalDataModel.swift */,
+				6E209F6B2B52CD5100DC357D /* ColorPalette.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				6EB26E612B397739008E40B6 /* CustomCollectionViewCell.swift in Sources */,
 				6EF3C6432B4C9E4200C2F9AD /* NetworkModel.swift in Sources */,
 				6E7D33C12B30CB0E00445A76 /* AppDelegate.swift in Sources */,
+				6E209F6C2B52CD5100DC357D /* ColorPalette.swift in Sources */,
 				6E7D33C32B30CB0E00445A76 /* SceneDelegate.swift in Sources */,
 				6EC559972B3A2DDA0096ED39 /* TransformationListTableViewController.swift in Sources */,
 				6E8478572B51321900E1A3E2 /* UIImage+URL.swift in Sources */,
@@ -568,8 +572,7 @@
 				INFOPLIST_FILE = Practica_FundIOS_AGGA/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -595,8 +598,7 @@
 				INFOPLIST_FILE = Practica_FundIOS_AGGA/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
