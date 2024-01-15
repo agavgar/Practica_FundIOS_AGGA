@@ -2,12 +2,12 @@
 
 En esta práctica desarrollo una app con lenguaje swift bajo el patrón de diseño MVC (Model View Controller). Para su elaboración se consumido la API de Dragon Ball para realizar llamadas de red.
 
-![Simulator Screenshot - iPhone 15 - 2024-01-14 at 17 33 14](https://github.com/agavgar/Practica_FundIOS_AGGA/assets/98350985/373894a8-9589-4f01-8451-da41266570b9)
-![Simulator Screenshot - iPhone 15 - 2024-01-14 at 17 33 31](https://github.com/agavgar/Practica_FundIOS_AGGA/assets/98350985/eee10345-a86a-4bac-945f-6d5b59c9200c)
-![Simulator Screenshot - iPhone 15 - 2024-01-14 at 17 33 38](https://github.com/agavgar/Practica_FundIOS_AGGA/assets/98350985/83a49db2-a970-4f5b-8c7d-25fa7de409fd)
-![Simulator Screenshot - iPhone 15 - 2024-01-14 at 17 33 48](https://github.com/agavgar/Practica_FundIOS_AGGA/assets/98350985/223c2668-7e0c-4de0-8b75-4469de96d61d)
-![Simulator Screenshot - iPhone 15 - 2024-01-14 at 17 33 52](https://github.com/agavgar/Practica_FundIOS_AGGA/assets/98350985/4f6a2550-d3a7-410a-8027-c1ffd17d8fa9)
-![Simulator Screenshot - iPhone 15 - 2024-01-14 at 17 33 58](https://github.com/agavgar/Practica_FundIOS_AGGA/assets/98350985/55398e18-0edc-4e50-834a-517f2b840a90)
+![Simulator Screenshot - iPhone 15 - 2024-01-14 at 17 33](https://github.com/agavgar/Practica_FundIOS_AGGA/assets/98350985/50267459-8f0a-44a1-b32d-c35f1c291af4)
+![Simulator Screenshot - iPhone 15 - 2024-01-14 at 17 33-2](https://github.com/agavgar/Practica_FundIOS_AGGA/assets/98350985/ce2f0867-5051-49ba-8682-e8cb3247a4bd)
+![Simulator Screenshot - iPhone 15 - 2024-01-14 at 17 33-3](https://github.com/agavgar/Practica_FundIOS_AGGA/assets/98350985/e98983e1-3f4d-4778-931f-b2e89fd6ac0c)
+![Simulator Screenshot - iPhone 15 - 2024-01-14 at 17 33-4](https://github.com/agavgar/Practica_FundIOS_AGGA/assets/98350985/801cd045-ee37-480d-83ca-15cde52562e4)
+![Simulator Screenshot - iPhone 15 - 2024-01-14 at 17 33-5](https://github.com/agavgar/Practica_FundIOS_AGGA/assets/98350985/a0457d0c-0f1c-4a1e-9959-cd225a672f1e)
+![Simulator Screenshot - iPhone 15 - 2024-01-14 at 17 33-6](https://github.com/agavgar/Practica_FundIOS_AGGA/assets/98350985/1c6238c8-352b-4ffa-a907-c96a3253d1ce)
 
 
 Breve descripción
