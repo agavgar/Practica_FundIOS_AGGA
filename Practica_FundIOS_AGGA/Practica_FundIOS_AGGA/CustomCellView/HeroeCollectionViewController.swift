@@ -30,6 +30,7 @@ final class HeroeCollectionViewController: UICollectionViewController {
         
         let logo = UIImage(named: "DragonBallLogo")
         let imageView = UIImageView(image: logo)
+        imageView.frame.size = CGSize(width: 50, height: 15)
         imageView.contentMode = .scaleAspectFit
         
         navigationItem.titleView = imageView

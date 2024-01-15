@@ -26,7 +26,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="dvm-7p-8b6">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dvm-7p-8b6">
                     <rect key="frame" x="16" y="75" width="361" height="727"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="BG0" translatesAutoresizingMaskIntoConstraints="NO" id="Dcy-2a-fCV">
@@ -37,7 +37,7 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SpV-0D-Y5e" userLabel="heroName">
-                            <rect key="frame" x="0.0" y="339" width="361" height="32"/>
+                            <rect key="frame" x="0.0" y="316" width="361" height="32"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="32" id="Tu8-NM-oh7"/>
                             </constraints>
@@ -46,12 +46,12 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="Description" lineBreakMode="tailTruncation" numberOfLines="25" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vB-v6-aU8" userLabel="heroDescripcion">
-                            <rect key="frame" x="0.0" y="409.99999999999994" width="361" height="242.33333333333331"/>
+                            <rect key="frame" x="0.0" y="364" width="361" height="311.33333333333326"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" red="0.98625212910000004" green="0.92130094770000004" blue="0.3222264051" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U41-CC-f7z">
+                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U41-CC-f7z">
                             <rect key="frame" x="0.0" y="691.33333333333337" width="361" height="35.666666666666629"/>
                             <color key="tintColor" red="0.98625212910000004" green="0.92130094770000004" blue="0.3222264051" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <state key="normal" title="Button"/>
@@ -71,9 +71,8 @@
                         <constraint firstAttribute="trailing" secondItem="U41-CC-f7z" secondAttribute="trailing" id="5Wj-Dy-bQ4"/>
                         <constraint firstItem="U41-CC-f7z" firstAttribute="leading" secondItem="dvm-7p-8b6" secondAttribute="leading" id="Ii6-2d-gZV"/>
                         <constraint firstItem="SpV-0D-Y5e" firstAttribute="leading" secondItem="dvm-7p-8b6" secondAttribute="leading" id="N9Y-To-Ps4"/>
-                        <constraint firstItem="9vB-v6-aU8" firstAttribute="top" relation="greaterThanOrEqual" secondItem="SpV-0D-Y5e" secondAttribute="bottom" priority="990" constant="16" id="ROn-s9-mxp"/>
-                        <constraint firstItem="SpV-0D-Y5e" firstAttribute="top" secondItem="Dcy-2a-fCV" secondAttribute="bottom" constant="39" id="aV3-2U-hfv"/>
-                        <constraint firstItem="U41-CC-f7z" firstAttribute="top" relation="greaterThanOrEqual" secondItem="9vB-v6-aU8" secondAttribute="bottom" constant="16" id="gM8-6E-hg6"/>
+                        <constraint firstItem="9vB-v6-aU8" firstAttribute="top" relation="greaterThanOrEqual" secondItem="SpV-0D-Y5e" secondAttribute="bottom" priority="990" constant="8" id="ROn-s9-mxp"/>
+                        <constraint firstItem="U41-CC-f7z" firstAttribute="top" relation="greaterThanOrEqual" secondItem="9vB-v6-aU8" secondAttribute="bottom" constant="8" id="gM8-6E-hg6"/>
                         <constraint firstItem="Dcy-2a-fCV" firstAttribute="trailing" secondItem="U41-CC-f7z" secondAttribute="trailing" id="mMf-Tc-CBd"/>
                     </constraints>
                 </stackView>

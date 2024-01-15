@@ -39,6 +39,10 @@ final class HeroDetailViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        updateUI()
+    }
+    
     //MARK: - Actions
     
     @IBAction func buttonTouchCancel(_ sender: Any) {
@@ -67,9 +71,8 @@ final class HeroDetailViewController: UIViewController {
         let logo = UIImage(named: "DragonBallLogo")
         let imageView = UIImageView(image: logo)
         imageView.contentMode = .scaleAspectFit
-        imageView.frame.size = CGSize(width: 50, height: 15)
         navigationItem.titleView = imageView
-        
+        navigationController?.navigationBar.tintColor = ColorPalette.customYellow
         navigationItem.backBarButtonItem?.title = "Heroes"
         navigationItem.backBarButtonItem?.tintColor = ColorPalette.customYellow
         

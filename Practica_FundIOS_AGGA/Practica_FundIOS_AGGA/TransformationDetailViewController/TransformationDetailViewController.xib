@@ -25,7 +25,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="qKU-Mn-dhW">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qKU-Mn-dhW">
                     <rect key="frame" x="16" y="75" width="361" height="727"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="3Y8-pV-2Fr">
@@ -36,7 +36,7 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUa-zd-QMQ" userLabel="transformName">
-                            <rect key="frame" x="0.0" y="339" width="361" height="32"/>
+                            <rect key="frame" x="0.0" y="316" width="361" height="32"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="32" id="xBI-2w-jbB"/>
                             </constraints>
@@ -45,17 +45,17 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="Description" lineBreakMode="tailTruncation" numberOfLines="25" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BtR-5F-FEJ" userLabel="transformDescripcion">
-                            <rect key="frame" x="0.0" y="410" width="361" height="317"/>
+                            <rect key="frame" x="0.0" y="364" width="361" height="363"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" red="0.98625212910000004" green="0.92130094770000004" blue="0.3222264051" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="BtR-5F-FEJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="bUa-zd-QMQ" secondAttribute="bottom" constant="16" id="68a-qw-lYg"/>
+                        <constraint firstItem="BtR-5F-FEJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="bUa-zd-QMQ" secondAttribute="bottom" constant="8" id="68a-qw-lYg"/>
                         <constraint firstItem="bUa-zd-QMQ" firstAttribute="leading" secondItem="qKU-Mn-dhW" secondAttribute="leading" id="YEe-P0-2qH"/>
-                        <constraint firstItem="bUa-zd-QMQ" firstAttribute="top" secondItem="3Y8-pV-2Fr" secondAttribute="bottom" constant="39" id="arq-pe-d3T"/>
                         <constraint firstAttribute="trailing" secondItem="bUa-zd-QMQ" secondAttribute="trailing" id="bj7-r3-ZOD"/>
+                        <constraint firstAttribute="bottom" secondItem="BtR-5F-FEJ" secondAttribute="bottom" constant="8" id="bzR-lE-Kaq"/>
                         <constraint firstAttribute="trailing" secondItem="BtR-5F-FEJ" secondAttribute="trailing" id="c0I-Tc-9NM"/>
                     </constraints>
                 </stackView>

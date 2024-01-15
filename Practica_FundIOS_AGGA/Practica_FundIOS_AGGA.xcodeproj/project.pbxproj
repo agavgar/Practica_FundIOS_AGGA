@@ -570,6 +570,7 @@
 				DEVELOPMENT_TEAM = M26LNJLX8T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Practica_FundIOS_AGGA/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Práctica_FundIOS_AGGA";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -596,6 +597,7 @@
 				DEVELOPMENT_TEAM = M26LNJLX8T;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Practica_FundIOS_AGGA/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Práctica_FundIOS_AGGA";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
