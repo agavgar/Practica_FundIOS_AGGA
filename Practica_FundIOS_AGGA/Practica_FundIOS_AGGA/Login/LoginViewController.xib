@@ -11,6 +11,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Practica_FundIOS_AGGA" customModuleProvider="target">
             <connections>
                 <outlet property="emailUserName" destination="cOi-Lk-qXU" id="FIB-uM-9IY"/>
+                <outlet property="infoPassword" destination="QGv-Wa-CJu" id="mg8-Cg-qDJ"/>
+                <outlet property="infoUsername" destination="qzm-hG-bic" id="Ej6-TA-Tpf"/>
                 <outlet property="loginButton" destination="Rrg-jd-lMX" id="rMf-7x-gug"/>
                 <outlet property="passwordUser" destination="UpN-qq-wlK" id="lhz-Ts-QG7"/>
                 <outlet property="view" destination="usd-kO-58L" id="C8R-zL-beg"/>

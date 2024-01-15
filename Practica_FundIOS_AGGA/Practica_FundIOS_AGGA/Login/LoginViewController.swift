@@ -13,6 +13,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordUser: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
+    @IBOutlet weak var infoUsername: UILabel!
+    @IBOutlet weak var infoPassword: UILabel!
+    
     //MARK: - Model
     private let model = NetworkModel.shared
     
@@ -51,7 +54,18 @@ class LoginViewController: UIViewController {
                     self.navigationController?.setViewControllers([heroeCollectionViewController], animated: true)
                 }
                 
-            case let.failure(error): print("\(error)")
+            case let.failure(error):
+                print("\(error)")
+                
+                DispatchQueue.main.async {
+                    self.infoUsername.text = "Usuario y/o contraseña incorrecto"
+                    self.infoPassword.text = "Usuario y/o contraseña incorrecto"
+                    self.infoUsername.textColor = ColorPalette.customRed
+                    self.infoPassword.textColor = ColorPalette.customRed
+                    self.loginButton.tintColor = ColorPalette.customYellow
+                    self.zoomOut()
+                }
+                
             }
         }
     }
