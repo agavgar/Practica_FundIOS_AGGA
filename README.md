@@ -2,6 +2,8 @@
 
 En esta práctica desarrollo una app con lenguaje swift bajo el patrón de diseño MVC (Model View Controller). Para su elaboración se consumido la API de Dragon Ball para realizar llamadas de red.
 
+**Resultado: APTO**
+
 ![Simulator Screenshot - iPhone 15 - 2024-01-14 at 17 33](https://github.com/agavgar/Practica_FundIOS_AGGA/assets/98350985/50267459-8f0a-44a1-b32d-c35f1c291af4)
 ![Simulator Screenshot - iPhone 15 - 2024-01-14 at 17 33-2](https://github.com/agavgar/Practica_FundIOS_AGGA/assets/98350985/ce2f0867-5051-49ba-8682-e8cb3247a4bd)
 ![Simulator Screenshot - iPhone 15 - 2024-01-14 at 17 33-6](https://github.com/agavgar/Practica_FundIOS_AGGA/assets/98350985/1c6238c8-352b-4ffa-a907-c96a3253d1ce)
